@@ -621,6 +621,7 @@ static int run_command(struct command_context *context,
 			retval = -ENOMEM;
 	} else if (retval == ERROR_COMMAND_CLOSE_CONNECTION) {
 		/* just fall through for a shutdown request */
+        return JIM_OK;
 	} else if (retval != ERROR_OK) {
 		/* we do not print out an error message because the command *should*
 		 * have printed out an error
